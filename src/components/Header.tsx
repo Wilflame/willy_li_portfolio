@@ -116,7 +116,7 @@ export const Header = () => {
               <>
                 <Row s={{ hide: true }}>
                   <ToggleButton
-                    prefixIcon="target" 
+                    prefixIcon="rocket" 
                     href="/work/urchin"
                     label="Urchin"
                     selected={pathname === "/work/urchin"}
@@ -124,7 +124,7 @@ export const Header = () => {
                 </Row>
                 <Row hide s={{ hide: false }}>
                   <ToggleButton
-                    prefixIcon="target"
+                    prefixIcon="rocket"
                     href="/work/urchin"
                     selected={pathname === "/work/urchin"}
                   />
@@ -136,7 +136,7 @@ export const Header = () => {
               <>
                 <Row s={{ hide: true }}>
                   <ToggleButton
-                    prefixIcon="target" 
+                    prefixIcon="rocket" 
                     href="/work/transformable-wheel-robot"
                     label="Transformable Wheel Robot"
                     selected={pathname === "/work/transformable-wheel-robot"}
@@ -144,7 +144,7 @@ export const Header = () => {
                 </Row>
                 <Row hide s={{ hide: false }}>
                   <ToggleButton
-                    prefixIcon="target"
+                    prefixIcon="rocket"
                     href="/work/transformable-wheel-robot"
                     selected={pathname === "/work/transformable-wheel-robot"}
                   />
