@@ -19,7 +19,6 @@ import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
-import { Projects } from "@/components/work/Projects";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -124,13 +123,62 @@ export default async function Project({
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
-        </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
-      </Column>
+      {(() => {
+        const remainingMedia = post.metadata.images.slice(1);
+        const videos = remainingMedia.filter((item) => 
+          item.toLowerCase().endsWith('.mp4') || 
+          item.toLowerCase().endsWith('.webm') || 
+          item.toLowerCase().endsWith('.mov') ||
+          item.toLowerCase().endsWith('.ogg')
+        );
+        const images = remainingMedia.filter((item) => 
+          !item.toLowerCase().endsWith('.mp4') && 
+          !item.toLowerCase().endsWith('.webm') && 
+          !item.toLowerCase().endsWith('.mov') &&
+          !item.toLowerCase().endsWith('.ogg')
+        );
+
+        return (
+          <>
+            {videos.length > 0 && (
+              <Column fillWidth gap="l" marginTop="40" maxWidth="l">
+                <Heading as="h2" variant="display-strong-xs" marginBottom="m">
+                  Video
+                </Heading>
+                {videos.map((video, index) => (
+                  <Media
+                    key={index}
+                    enlarge
+                    fillWidth
+                    radius="m"
+                    sizes="(max-width: 960px) 100vw, 960px"
+                    alt={`${post.metadata.title} - Video ${index + 1}`}
+                    src={video}
+                  />
+                ))}
+              </Column>
+            )}
+            {images.length > 0 && (
+              <Column fillWidth gap="l" marginTop="40" maxWidth="l">
+                <Heading as="h2" variant="display-strong-xs" marginBottom="m">
+                  Gallery
+                </Heading>
+                {images.map((image, index) => (
+                  <Media
+                    key={index}
+                    enlarge
+                    fillWidth
+                    radius="m"
+                    sizes="(max-width: 960px) 100vw, 960px"
+                    alt={`${post.metadata.title} - Image ${index + 1}`}
+                    src={image}
+                  />
+                ))}
+              </Column>
+            )}
+          </>
+        );
+      })()}
       <ScrollToHash />
     </Column>
   );

@@ -12,7 +12,6 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 
 export async function generateMetadata() {
@@ -82,10 +81,10 @@ export default function Home() {
                 {about.studies.institutions.map((inst, index) => (
                   <Column key={index} horizontal="center" gap="4">
                     <Text variant="body-default-l" onBackground="neutral-strong">
-                      {inst.name} [cite: 4]
+                      {inst.name}
                     </Text>
                     <Text variant="body-default-m" align="center" onBackground="neutral-weak">
-                      {inst.description} [cite: 5, 7]
+                      {inst.description}
                     </Text>
                   </Column>
                 ))}
@@ -125,11 +124,9 @@ export default function Home() {
            <Heading as="h2" variant="display-strong-xs" marginBottom="m">
             Featured Research & Projects
           </Heading>
-          <Projects range={[1, 3]} />
+          <Projects range={[1, 3]} exclude={["building-once-ui-a-customizable-design-system", "simple-portfolio-builder"]} />
         </Column>
       </RevealFx>
-      
-      <Mailchimp />
     </Column>
   );
 }

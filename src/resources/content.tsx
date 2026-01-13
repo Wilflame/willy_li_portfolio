@@ -4,7 +4,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Willy",
   lastName: "Li",
-  name: `Chen Yen (Willy) Li`,
+  name: `Willy Li`,
   role: "Mechanical Engineer",
   avatar: "/images/headshot.jpg",
   email: "0221willy@gmail.com",
@@ -117,33 +117,6 @@ const about: About = {
         ],
         images: [],
       },
-      {
-        company: "Hawkes Research Lab, UCSB",
-        timeframe: "Sept 2024 - Present",
-        role: "Undergraduate Researcher",
-        achievements: [
-          <>
-            Co-authored a workshop paper for RSS 2025 regarding transformable terrain robots.
-          </>,
-          <>
-            Custom-fabricated a modular robot chassis from scratch, including 3D-printed motor 
-            mounts, gears, shafts, and wheels for lightweight durability.
-          </>,
-          <>
-            Developed Python control and data logging scripts on NVIDIA Jetson (Linux) for future 
-            integration into ROS 2 autonomous operation.
-          </>,
-          <>
-            Created a Blender API script to auto-generate 10,000+ terrains for simulation 
-            and physical CNC fabrication.
-          </>,
-          <>
-            Designed and fabricated Vine Robot Housing capable of withstanding 4 psi internal 
-            pressure using laser-cut acrylic and custom motor systems.
-          </>,
-        ],
-        images: [],
-      },
     ],
   },
   studies: {
@@ -206,4 +179,20 @@ const work: Work = {
   description: `Designed and built a smartphone-controlled robot for cliff diving safety that collects real-time water depth, pressure, and temperature data.`,
 };
 
-export { person, social, newsletter, home, about, work };
+// Urchin Project Details
+const urchin = {
+  title: "Autonomous Underwater Depth-Sensing Robot - Urchin",
+  publishedAt: "2025-04-01",
+  summary: "Smartphone-controlled robot for cliff diving safety utilizing syringe-based buoyancy.",
+  overview: "I designed and built a smartphone-controlled robot for cliff diving safety that collects real-time water depth, pressure, temperature, and photo data via Wi-Fi using a direct IP address connection.",
+  technicalSystems: {
+    buoyancyEngineering: "I engineered a syringe-based buoyancy system using 3D-printed parts, a DC gear motor with encoder, and a gear mechanism to enable smooth depth control of the robot.",
+    waterproofFabrication: "The waterproof, disassemblable casing was created by vacuum-forming PETG sheets around a PLA-printed mold. I utilized O-rings, marine weld-level epoxy, and clamped two half-shells together using side fixtures.",
+    electronicsIntegration: "The system integrates an ESP32 camera module, voltage regulator, barometric pressure sensor, Wi-Fi antenna, and a 4xAA battery pack into a compact, durable housing.",
+  },
+  images: [
+    "/images/projects/urchin/cover.jpg",
+  ],
+};
+
+export { person, social, newsletter, home, about, work, urchin };

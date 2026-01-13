@@ -112,7 +112,7 @@ export const Header = () => {
 
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               
-              {/* FIXED URCHIN NAVIGATION */}
+              {/* PROJECT NAVIGATION */}
               <>
                 <Row s={{ hide: true }}>
                   <ToggleButton
@@ -127,6 +127,26 @@ export const Header = () => {
                     prefixIcon="target"
                     href="/work/urchin"
                     selected={pathname === "/work/urchin"}
+                  />
+                </Row>
+              </>
+
+              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+
+              <>
+                <Row s={{ hide: true }}>
+                  <ToggleButton
+                    prefixIcon="target" 
+                    href="/work/transformable-wheel-robot"
+                    label="Transformable Wheel Robot"
+                    selected={pathname === "/work/transformable-wheel-robot"}
+                  />
+                </Row>
+                <Row hide s={{ hide: false }}>
+                  <ToggleButton
+                    prefixIcon="target"
+                    href="/work/transformable-wheel-robot"
+                    selected={pathname === "/work/transformable-wheel-robot"}
                   />
                 </Row>
               </>

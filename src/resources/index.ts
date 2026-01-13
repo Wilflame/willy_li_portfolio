@@ -6,6 +6,7 @@ export {
   home,
   about,
   work,
+  urchin,
 } from "./content";
 
 export {
