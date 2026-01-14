@@ -2,23 +2,33 @@
 title: "Transformable Wheel Robot"
 publishedAt: "2025-04-15"
 summary: "A modular robot with transformable wheel capabilities for adaptive terrain navigation."
-images: []
+images:
+  - "/images/projects/project-01/TransformableWheelRobot/IMG_4191.JPG"
+  - "/images/projects/project-01/TransformableWheelRobot/IMG_5767.mp4"
+  - "/images/projects/project-01/TransformableWheelRobot/IMG_4182.JPG"
+link: "https://openreview.net/forum?id=cguzT10d5i#discussion"
 ---
 
 ## Project Overview
 
-[Add your project overview description here]
+This transformable-wheel robot was designed and built for dynamic, unstructured environments, capable of driving on smooth wheels and extending its legs to crawl over obstacles. The system uses reinforcement learning with proprioceptive sensing—motor velocity, body acceleration, and body orientation—to autonomously determine when to extend its legs for terrain adaptation.
+
+**Related Publication:** [Learning to extend legs of a transformable-wheel robot](https://openreview.net/forum?id=cguzT10d5i#discussion) - RSS 2025 Hardware Intelligence Workshop
 
 ## Technical Systems
 
-### [Section Title]
+### Hardware Design & Fabrication
 
-[Add your technical details here]
+Built the transformable terrain robot entirely from scratch, designing and manufacturing the chassis, motor mounts, gears, shafts, and wheels—all custom-fabricated and 3D printed for lightweight durability and modularity.
 
-### [Section Title]
+### Software Development - Robot Control
 
-[Add your technical details here]
+Developed multiple Python scripts on the NVIDIA Jetson (Linux) for wheel and leg control, current sensing, and IMU data logging to CSV; structured the codebase for future integration into ROS 2 for autonomous operation and sensor fusion.
 
-### [Section Title]
+### Software Development - Terrain Generation
 
-[Add your technical details here]
+Developed a Blender API script to auto-generate and export 10,000+ terrains directly into organized folders, allowing simple customization of peaks, randomness, and smoothness through user input to maximize efficiency and usability.
+
+### Physical Terrain Fabrication
+
+Converted and imported Blender-generated terrain models into Fusion CAM and Bambu Studio for fabrication; configured toolpaths and G-code for CNC milling on the ShopBot and 3D printed PLA terrains to produce accurate physical representations of simulated environments.
