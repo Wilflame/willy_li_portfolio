@@ -151,6 +151,26 @@ export const Header = () => {
                 </Row>
               </>
 
+              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+
+              <>
+                <Row s={{ hide: true }}>
+                  <ToggleButton
+                    prefixIcon="rocket" 
+                    href="/work/vine-robot-housing"
+                    label="Vine Robot Housing"
+                    selected={pathname === "/work/vine-robot-housing"}
+                  />
+                </Row>
+                <Row hide s={{ hide: false }}>
+                  <ToggleButton
+                    prefixIcon="rocket"
+                    href="/work/vine-robot-housing"
+                    selected={pathname === "/work/vine-robot-housing"}
+                  />
+                </Row>
+              </>
+
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />
